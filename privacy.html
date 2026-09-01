@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2VK81QZF7L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2VK81QZF7L');
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — McGee Web Solutions</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="How McGee Web Solutions collects, uses, and protects your personal data.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f%5B%5D=cabinet-grotesk@700,800&f%5B%5D=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Tokens (original privacy.html palette, unchanged) ── */
+:root {
+  --ink:         #0F1D30;
+  --cream:       #F6F4EF;
+  --copper-pale: #F3E8D8;
+  --slate:       #536275;
+  --slate-lt:    #8293A6;
+  --copper:      #B07535;
+  --copper-deep: #8F5E28;
+  --gold:        #C9973F;
+  --hairline:    #D9D5C9;
+  --white:       #FFFFFF;
+
+  --shell:     rgba(15,29,48,.045);
+  --hair:      rgba(15,29,48,.12);
+  --hair-soft: rgba(15,29,48,.075);
+
+  --display: "Cabinet Grotesk", -apple-system, sans-serif;
+  --body:    "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:    "JetBrains Mono", ui-monospace, monospace;
+
+  --max: 1240px;
+  --gut: clamp(20px, 4.5vw, 52px);
+  --shell-r: 2rem;
+  --core-r: calc(2rem - 0.4rem);
+  --ease: cubic-bezier(.32,.72,0,1);
+
+  --z-nav: 40;
+  --z-menu: 60;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16.5px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: var(--copper-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { list-style: none; }
+
+/* Ambient field — fixed layer, never on scrolling content */
+.ambient {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(820px 600px at 84% -8%, rgba(176,117,53,.09), transparent 64%),
+    radial-gradient(660px 540px at 2% 40%, rgba(83,98,117,.06), transparent 68%);
+}
+.ambient::after {
+  content: ''; position: absolute; inset: 0; opacity: .028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px;
+}
+.layer { position: relative; z-index: 1; }
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gut); }
+
+/* ── Type ─────────────────────────────────────────── */
+h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -.032em; line-height: 1.05; text-wrap: balance; color: var(--ink); }
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.4rem, 2.2vw, 1.8rem); }
+p  { color: var(--slate); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--hair); background: var(--shell);
+  border-radius: 999px; padding: 7px 14px;
+  font-size: .78rem; color: var(--slate);
+  margin-bottom: 20px;
+}
+.eyebrow::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--copper); }
+
+/* ── Accessibility ────────────────────────────────── */
+.skip-link {
+  position: absolute; left: 14px; top: -60px; z-index: var(--z-menu);
+  background: var(--ink); color: var(--cream);
+  padding: 10px 18px; border-radius: 10px; font-weight: 700; font-size: .9rem;
+  transition: top .2s;
+}
+.skip-link:focus { top: 14px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}
+
+.reveal {
+  opacity: 0; transform: translateY(24px); filter: blur(5px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease), filter .8s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: none; filter: none; }
+
+/* ── Double bezel ─────────────────────────────────── */
+.bezel {
+  background: var(--shell);
+  border: 1px solid var(--hair-soft);
+  border-radius: var(--shell-r);
+  padding: .4rem;
+}
+.core {
+  background: linear-gradient(180deg, var(--white), #FCFBF8);
+  border: 1px solid var(--hair-soft);
+  border-radius: var(--core-r);
+  box-shadow: 0 1px 2px rgba(15,29,48,.03), 0 14px 34px -20px rgba(15,29,48,.16);
+  height: 100%;
+}
+
+/* ── Nav ──────────────────────────────────────────── */
+.nav-dock { position: sticky; top: 0; z-index: var(--z-nav); padding-top: 20px; }
+.nav-pill {
+  position: relative;
+  width: max-content; max-width: calc(100% - 2 * var(--gut)); margin-inline: auto;
+  display: flex; align-items: center; gap: 28px;
+  padding: 8px 8px 8px 17px; border-radius: 999px;
+  background: rgba(246,244,239,.72);
+  border: 2px solid var(--gold);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  transition: background .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease);
+}
+.nav-pill::before {
+  content: ''; position: absolute; left: 22px; right: 22px; top: -2px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--copper-deep), var(--copper), var(--copper-deep), transparent);
+  opacity: 0; transition: opacity .5s var(--ease);
+}
+.nav-dock.tight .nav-pill {
+  background: rgba(246,244,239,.9);
+  border-color: var(--copper-deep);
+  box-shadow: 0 10px 30px -22px rgba(15,29,48,.45);
+}
+.nav-dock.tight .nav-pill::before { opacity: .85; }
+
+.brand { display: flex; align-items: center; gap: 10px; flex: none; color: var(--ink); }
+.brand:hover { text-decoration: none; }
+.brand-logo { height: 30px; width: auto; }
+.brand-name { font-family: var(--display); font-weight: 700; font-size: .98rem; letter-spacing: -.02em; }
+
+.nav-back {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 8px 8px 20px; border-radius: 999px;
+  border: 1px solid var(--hair); background: transparent;
+  font-size: .88rem; font-weight: 700; color: var(--slate);
+  min-height: 42px;
+  transition: background .5s var(--ease), color .5s var(--ease), border-color .5s var(--ease);
+}
+.nav-back:hover { background: var(--shell); color: var(--ink); border-color: rgba(15,29,48,.24); text-decoration: none; }
+.nav-back-orb {
+  width: 30px; height: 30px; border-radius: 50%; flex: none;
+  background: rgba(15,29,48,.06);
+  display: grid; place-items: center;
+  transition: transform .5s var(--ease);
+}
+.nav-back-orb svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.nav-back:hover .nav-back-orb { transform: translateX(-3px); }
+
+/* ── Policy layout ────────────────────────────────── */
+.policy-page { padding: clamp(44px, 6vw, 84px) 0 clamp(60px, 8vw, 110px); }
+.policy-head { max-width: 760px; margin-bottom: clamp(32px, 4vw, 48px); }
+
+.policy-updated {
+  font-family: var(--mono); font-size: .78rem;
+  color: var(--slate-lt); margin-top: 16px;
+}
+.policy-lede { margin-top: 20px; font-size: 1.08rem; line-height: 1.7; max-width: 62ch; }
+
+.policy-body { display: grid; gap: 14px; max-width: 860px; }
+.policy-section .core { padding: clamp(24px, 3vw, 36px); }
+.policy-section h2 { padding-bottom: 14px; border-bottom: 1px solid var(--hair-soft); }
+.policy-section > .core > p { margin-top: 16px; max-width: 66ch; }
+.policy-section ul { margin-top: 6px; }
+.policy-section li {
+  margin-top: 14px; padding-left: 24px; position: relative;
+  color: var(--slate); max-width: 66ch;
+}
+.policy-section li::before {
+  content: ''; position: absolute;
+  left: 0; top: .68em;
+  width: 9px; height: 2px; border-radius: 2px;
+  background: var(--copper);
+}
+.policy-section strong { color: var(--ink); font-weight: 700; }
+
+.policy-note { margin-top: 14px; max-width: 860px; }
+.policy-note .core {
+  padding: 22px 26px;
+  border-left: 3px solid var(--copper);
+  border-top-left-radius: 6px; border-bottom-left-radius: 6px;
+}
+.policy-note p { margin: 0; font-size: .95rem; }
+
+/* ── Footer ───────────────────────────────────────── */
+.site-footer { background: var(--ink); padding: 34px 0; margin-top: 20px; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+.footer-inner .brand-mark {
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .08em; font-weight: 500;
+  background: var(--cream); color: var(--ink); padding: 5px 9px; border-radius: 5px;
+}
+.footer-inner .brand-name { color: var(--cream); }
+.footer-inner p { color: var(--slate-lt); font-size: .88rem; }
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 620px) {
+  .nav-pill { width: 100%; justify-content: space-between; gap: 12px; padding-left: 14px; }
+  .brand-name { display: none; }
+  :root { --shell-r: 1.5rem; --core-r: calc(1.5rem - 0.4rem); }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ambient" aria-hidden="true"></div>
+<div id="sentinel" style="position:absolute;top:0;height:1px;width:100%" aria-hidden="true"></div>
+
+<div class="layer">
+
+<!-- ── HEADER ──────────────────────────────────── -->
+<div class="nav-dock" id="navDock">
+  <div class="wrap">
+    <nav class="nav-pill" aria-label="Primary">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="McGee Web Solutions logo" class="brand-logo">
+        <span class="brand-name">McGee Web Solutions</span>
+      </a>
+      <a href="index.html" class="nav-back">
+        <span class="nav-back-orb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></span>
+        Back to home
+      </a>
+    </nav>
+  </div>
+</div>
+
+<!-- ── PRIVACY POLICY ──────────────────────────── -->
+<main id="main">
+  <section class="policy-page">
+    <div class="wrap">
+
+      <div class="policy-head reveal visible">
+        <span class="eyebrow">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p class="policy-updated">Last updated: 12 July 2026</p>
+        <p class="policy-lede">We keep this simple: we collect the minimum information needed to respond to you and run our services, we never sell your data, and you can ask us to delete it at any time. Here's the detail.</p>
+      </div>
+
+      <div class="policy-body">
+
+        <div class="policy-section bezel reveal">
+          <div class="core">
+            <h2>Who we are</h2>
+            <p>McGee Web Solutions is a web design and automation business based in Ireland. For the purposes of data protection law, we are the data controller for personal data collected through this website. You can contact us about anything in this policy at <a href="mailto:contact@mcgeews.ie">contact@mcgeews.ie</a>.</p>
+          </div>
+        </div>
+
+        <div class="policy-section bezel reveal">
+          <div class="core">
+            <h2>What we collect and why</h2>
+            <ul>
+              <li><strong>Contact form.</strong> When you fill in our contact form we collect your name, email address, and message so we can respond to your enquiry.</li>
+              <li><strong>Chat assistant.</strong> If you use the chat widget on this site, the messages you send are processed to generate replies. If you share contact details in the chat (such as your name and email), we keep them so we can follow up with you.</li>
+              <li><strong>Email and phone.</strong> If you email or call us directly, we keep the correspondence for as long as we're dealing with your enquiry or working together.</li>
+            </ul>
+            <p>We rely on <strong>legitimate interest</strong> (responding to enquiries about our services) and, where we go on to work together, <strong>performance of a contract</strong> as our legal bases. We only send marketing communications with your consent, and you can withdraw it at any time.</p>
+          </div>
+        </div>
+
+        <div class="policy-section bezel reveal">
+          <div class="core">
+            <h2>Who processes your data for us</h2>
+            <p>We use a small number of trusted services to run this website and handle enquiries. They process data on our behalf under their own data-processing agreements:</p>
+            <ul>
+              <li><strong>Google (Gmail and Sheets)</strong> — enquiry notifications and our lead records.</li>
+              <li><strong>n8n</strong> — the automation platform that routes your form submissions and chat messages.</li>
+              <li><strong>Anthropic</strong> — the AI provider that generates the chat assistant's replies. Chat messages are sent to Anthropic's API to produce a response and are not used to train their models.</li>
+              <li><strong>GitHub Pages</strong> — hosts this website. Like most web hosts, GitHub may log visitor IP addresses for security purposes.</li>
+            </ul>
+            <p>We do not sell your personal data, and we do not share it with anyone else except where required by law.</p>
+          </div>
+        </div>
+
+        <div class="policy-section bezel reveal">
+          <div class="core">
+            <h2>Cookies and local storage</h2>
+            <p>This site does not use advertising or analytics cookies. The chat widget stores a session identifier in your browser's local storage so your conversation holds together while you're on the page. That's it.</p>
+          </div>
+        </div>
+
+        <div class="policy-section bezel reveal">
+          <div class="core">
+            <h2>How long we keep your data</h2>
+            <p>We keep enquiry details for as long as needed to deal with your enquiry, and client records for the duration of our work together plus any period required for tax and legal purposes. If you'd like your details removed sooner, just ask.</p>
+          </div>
+        </div>
+
+        <div class="policy-section bezel reveal">
+          <div class="core">
+            <h2>Marketing (SMS and email)</h2>
+            <p>Where we run SMS or email marketing — for ourselves or on behalf of clients — we do so in line with GDPR and the Irish ePrivacy Regulations (S.I. 336/2011). That means messages are only sent to people who have opted in or who are existing customers entitled to be contacted, every message identifies the sender, and every message includes a simple way to opt out (reply STOP to SMS, or use the unsubscribe link in email). Opt-outs are honoured immediately and permanently.</p>
+          </div>
+        </div>
+
+        <div class="policy-section bezel reveal">
+          <div class="core">
+            <h2>Your rights</h2>
+            <p>Under GDPR you have the right to:</p>
+            <ul>
+              <li>Access a copy of the personal data we hold about you</li>
+              <li>Have inaccurate data corrected</li>
+              <li>Have your data deleted ("right to erasure")</li>
+              <li>Restrict or object to our processing of your data</li>
+              <li>Receive your data in a portable format</li>
+              <li>Withdraw consent at any time, where processing is based on consent</li>
+            </ul>
+            <p>To exercise any of these, email <a href="mailto:contact@mcgeews.ie">contact@mcgeews.ie</a> and we'll respond within one month. You also have the right to lodge a complaint with the <a href="https://www.dataprotection.ie" target="_blank" rel="noopener">Data Protection Commission</a>, Ireland's supervisory authority — though we'd appreciate the chance to sort things out directly first.</p>
+          </div>
+        </div>
+
+        <div class="policy-section bezel reveal">
+          <div class="core">
+            <h2>Changes to this policy</h2>
+            <p>If we change how we handle personal data, we'll update this page and the date at the top. Significant changes will be flagged clearly on the site.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="policy-note bezel reveal">
+        <div class="core">
+          <p>Questions about any of this? Email <a href="mailto:contact@mcgeews.ie">contact@mcgeews.ie</a> — you'll be dealing directly with us, not a legal department.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">MWS</span>
+      <span class="brand-name">McGee Web Solutions</span>
+    </a>
+    <p>© 2026 McGee Web Solutions. Built in Ireland.</p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  // Nav tightens once the page leaves the very top
+  const sentinel = document.getElementById('sentinel');
+  const dock = document.getElementById('navDock');
+  new IntersectionObserver(([e]) => {
+    dock.classList.toggle('tight', !e.isIntersecting);
+  }, { threshold: 0 }).observe(sentinel);
+
+  // Scroll reveal, staggered
+  const items = Array.from(document.querySelectorAll('.reveal'));
+  items.forEach((el, i) => el.style.transitionDelay = (i % 4 * 70) + 'ms');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
